@@ -1,0 +1,15 @@
+@use "sass:math";
+.container {
+  @apply h-full;
+  padding-left: percentage(math.div(520, 1440));
+  .bg {
+    width: percentage(math.div(520, 1440));
+    @apply absolute top-0 bottom-0 left-0;
+
+    background-image: url("/src/assets/kyc-login-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 88px;
+    padding-left: 60px;
+  }
+}
