@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "antd": "^5.1.7",
@@ -27,9 +28,24 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
     "prettier": "2.8.4",
     "sass": "^1.58.0",
     "typescript": "*",
     "vite": "^4.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,css,scss}": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "yarn run lint:fix"
+    ]
   }
 }
