@@ -1,0 +1,8 @@
+
+.override-antd {
+  :global {
+    .ant-btn-default {
+      box-shadow: none;
+    }
+  }
+}
