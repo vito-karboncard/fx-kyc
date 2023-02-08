@@ -1,0 +1,33 @@
+{
+  "token": {
+    "colorPrimary": "#2b59ff",
+    "colorTextBase": "#1a202c",
+    "colorText": "#1A202C",
+    "colorTextTertiary": "#A0AEC0",
+    "colorTextSecondary": "#718096",
+    "colorBorder": "#EBEFF2",
+    "colorBorderSecondary": "#EBEFF2",
+    "colorBgLayout": "#F9F9F9",
+    "colorSuccess": "#00b42a",
+    "colorError": "#f53f3f",
+    "colorWarning": "#ff9411",
+    "colorInfo": "#2b59ff",
+    "colorFillSecondary": "rgba(43, 89, 255, 0.05)",
+    "colorFillTertiary": "rgba(43, 89, 255, 0.05)",
+    "colorFillQuaternary": "rgba(43, 89, 255, 0.05)",
+    "fontSizeXL": 18,
+    "fontSizeHeading1": 24,
+    "fontSizeHeading2": 18,
+    "fontSizeHeading3": 16,
+    "fontSizeHeading4": 14,
+    "fontSizeHeading5": 14,
+    "lineHeightLG": 1.625,
+    "lineHeightHeading1": 1.33333333,
+    "lineHeightHeading3": 1.625,
+    "lineHeightHeading2": 1.5555555555,
+    "borderRadius": 10,
+    "boxShadow": "0px 9px 32px 0px rgba(113, 128, 150, 0.16)",
+    "boxShadowSecondary": "0px 9px 32px 0px rgba(113, 128, 150, 0.16)",
+    "wireframe": false
+  }
+}
