@@ -1,9 +1,9 @@
-import {Button} from 'antd'
+import { Button } from 'antd'
 import './style/App.scss'
 import Style from './style/override-antd.global.module.scss'
 import classNames from 'classnames'
-function App() {
 
+function App () {
   return (
     <div className={classNames('App', Style.overrideAntd)}>
       <p>
