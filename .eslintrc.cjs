@@ -4,6 +4,7 @@ module.exports = {
     es2021: true
   },
   extends: [
+    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
@@ -21,5 +22,6 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", {argsIgnorePattern: "^_"}],
   }
 };

@@ -9,7 +9,7 @@ function App() {
     <div className={classNames("App", Style.overrideAntd)}>
       <p className={"my-2"}>
         <Button size={"small"}>Antd button</Button>
-        <Button size={"middle"} type={"primary"} ghost>
+        <Button size={"middle"} type={"primary"} ghost={true}>
           Antd button
         </Button>
         <Button size={"large"}>Antd button</Button>
