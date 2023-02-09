@@ -2,10 +2,11 @@ import type { FormRule } from "antd";
 import utils from ".";
 
 export const otpRule: FormRule = {
-  async validator(value) {
-    if (utils.REManual.otp.test(value as string)) {
+  async validator(_, value, ...rest) {
+    if (utils.REManual.otp.test(value)) {
+      await Promise.resolve();
       return;
     }
-    return new Error("请输入争取的验证码");
+    throw new Error("请输入正确的验证码");
   },
 };

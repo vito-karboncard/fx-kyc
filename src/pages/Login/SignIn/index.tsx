@@ -1,13 +1,20 @@
 import { Button, Form, Input, Typography } from "antd";
 import Box from "src/pages/Login/components/Box";
 import ModeSwitch from "src/pages/Login/components/ModeSwitch";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OtpInput from "src/pages/Login/components/OtpInput";
 import utils from "src/utils/index";
 type SignInMethod = "password" | "otp";
 function SignIn() {
   const [signInMethod, setSignInMethod] = useState<SignInMethod>("password");
   const [form] = Form.useForm();
+  const email = Form.useWatch("email", form);
+  const otp = Form.useWatch("otp", form);
+  useEffect(() => {
+    if (otp?.length === 6) {
+      form.validateFields(["otp"]);
+    }
+  }, [otp, form]);
   return (
     <Box>
       <Typography.Title level={1}>登录</Typography.Title>
@@ -23,19 +30,11 @@ function SignIn() {
 
         {signInMethod === "otp" && (
           <Form.Item
-            shouldUpdate={(prev, cur) => prev.email !== cur.email}
-            noStyle
+            name={"otp"}
+            rules={[utils.formValidator.otpRule]}
+            validateTrigger={"onBlur"}
           >
-            {({ getFieldValue }) => {
-              return (
-                <Form.Item name={"otp"} rules={[utils.formValidator.otpRule]}>
-                  <OtpInput
-                    placeholder={"验证码"}
-                    email={getFieldValue("email")}
-                  />
-                </Form.Item>
-              );
-            }}
+            <OtpInput placeholder={"验证码"} email={email} />
           </Form.Item>
         )}
 
