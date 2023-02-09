@@ -1,4 +1,5 @@
 import { Typography } from "antd";
+import { Link } from "react-router-dom";
 
 function ModeSwitch({
   onClick,
@@ -10,7 +11,9 @@ function ModeSwitch({
   return (
     <div className={"flex justify-between"}>
       <Typography.Link onClick={onClick}>{switchText}</Typography.Link>
-      <Typography.Link>忘记密码？</Typography.Link>
+      <Link to={"./forget-password"}>
+        <Typography.Link>忘记密码？</Typography.Link>
+      </Link>
     </div>
   );
 }

@@ -1,9 +1,9 @@
-import Style from "./style.module.scss";
+import Style from "src/wrapper/Login/style.module.scss";
 import FxBanner from "src/assets/fx-banner.svg";
 import { Typography } from "antd";
-import SignIn from "src/pages/Login/SignIn/index";
+import { Outlet } from "react-router-dom";
 
-function LoginPage() {
+function LoginWrapper() {
   return (
     <div className={Style.container}>
       <div className={Style.bg}>
@@ -13,10 +13,10 @@ function LoginPage() {
         </Typography.Title>
       </div>
       <div className={"h-full flex justify-center items-center"}>
-        <SignIn />
+        <Outlet />
       </div>
     </div>
   );
 }
 
-export default LoginPage;
+export default LoginWrapper;

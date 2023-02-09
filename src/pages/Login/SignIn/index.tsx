@@ -4,7 +4,9 @@ import ModeSwitch from "src/pages/Login/components/ModeSwitch";
 import { useEffect, useState } from "react";
 import OtpInput from "src/pages/Login/components/OtpInput";
 import utils from "src/utils/index";
+
 type SignInMethod = "password" | "otp";
+
 function SignIn() {
   const [signInMethod, setSignInMethod] = useState<SignInMethod>("password");
   const [form] = Form.useForm();
