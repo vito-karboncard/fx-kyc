@@ -3,5 +3,12 @@
     .ant-btn-default {
       box-shadow: none;
     }
+    h1,
+    h2,
+    h3 {
+      &.ant-typography {
+        margin-bottom: 0;
+      }
+    }
   }
 }
