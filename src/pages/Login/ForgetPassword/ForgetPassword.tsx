@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 import utils from "src/utils/index";
 import { useState } from "react";
 
-function ForgetPasswordForm({ onSuccess }: { onSuccess?: () => void }) {
+export const PasswordSet = ({ passwordLabel }: { passwordLabel?: string }) => {
   return (
-    <Form layout={"vertical"} onFinish={onSuccess}>
-      <Form.Item name={"password"} rules={[utils.formValidator.passwordRule]}>
+    <>
+      <Form.Item
+        name={"password"}
+        rules={[utils.formValidator.passwordRule]}
+        label={passwordLabel}
+      >
         <Input.Password placeholder={"设置您的登录密码"} />
       </Form.Item>
       <Form.Item
@@ -27,6 +31,19 @@ function ForgetPasswordForm({ onSuccess }: { onSuccess?: () => void }) {
       >
         <Input.Password placeholder={"请再次输入您的登录密码"} />
       </Form.Item>
+    </>
+  );
+};
+function ForgetPasswordForm({ onSuccess }: { onSuccess?: () => void }) {
+  return (
+    <Form
+      layout={"vertical"}
+      onFinish={(values) => {
+        console.log(values);
+        onSuccess?.();
+      }}
+    >
+      <PasswordSet />
       <Button type={"primary"} size={"large"} block htmlType={"submit"}>
         下一步
       </Button>
