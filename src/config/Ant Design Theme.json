@@ -15,6 +15,8 @@
     "colorFillSecondary": "rgba(43, 89, 255, 0.05)",
     "colorFillTertiary": "rgba(43, 89, 255, 0.05)",
     "colorFillQuaternary": "rgba(43, 89, 255, 0.05)",
+    "fontFamily": "HarmonyOS_Sans_Regular, Roboto, sans-serif",
+    "fontWeightStrong": 700,
     "fontSizeXL": 18,
     "fontSizeHeading1": 24,
     "fontSizeHeading2": 18,

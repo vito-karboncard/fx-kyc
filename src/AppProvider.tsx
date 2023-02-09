@@ -17,6 +17,10 @@ function AppProvider({ children }: { children: ReactNode }) {
               paddingContentHorizontalSM: 24,
               controlHeightSM: 24,
             },
+            Input: {
+              controlHeight: 44,
+              colorTextPlaceholder: AntdTheme.token.colorTextSecondary,
+            },
           },
         }}
       >
