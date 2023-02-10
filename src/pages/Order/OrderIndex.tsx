@@ -1,5 +1,7 @@
+import HomePageContentWrapper from "src/wrapper/Home/HomePageContentWrapper";
+
 function OrderIndex() {
-  return <div>订单</div>;
+  return <HomePageContentWrapper>order</HomePageContentWrapper>;
 }
 
 export default OrderIndex;

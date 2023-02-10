@@ -2,12 +2,13 @@ import { Outlet, useLocation } from "react-router-dom";
 import Logo from "src/components/Logo";
 import RouteItem from "src/wrapper/Home/RouteItem";
 import type { ComponentProps } from "react";
+import Style from "./home-wrapper.module.scss";
 
 function HomeWrapper() {
   return (
     <div className={`h-full relative pl-[252px]`}>
       <SideBar />
-      <div className={"h-full relative"}>
+      <div className={Style.contentContainer}>
         <Outlet />
       </div>
     </div>
@@ -15,7 +16,7 @@ function HomeWrapper() {
 }
 
 type RouteItemProps = ComponentProps<typeof RouteItem>;
-const NavRoutes: RouteItemProps[] = [
+export const NavRoutes: RouteItemProps[] = [
   {
     path: "/order",
     icon: "wallet",
