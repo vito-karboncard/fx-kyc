@@ -101,9 +101,7 @@
   renderIcons(iconNames)
 
   function copyText(str) {
-    navigator.clipboard.writeText(str.substring(5)).then(() => {
-      alert('copy successfully')
-    })
+    navigator.clipboard.writeText(str)
   }
 </script>
 </body>

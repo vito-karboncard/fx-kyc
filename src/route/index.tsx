@@ -3,11 +3,36 @@ import LoginWrapper from "src/wrapper/Login/LoginWrapper";
 import SignIn from "src/pages/Login/SignIn/index";
 import ForgetPassword from "src/pages/Login/ForgetPassword/ForgetPassword";
 import Register from "src/pages/Login/Register";
+import HomeWrapper from "src/wrapper/Home/HomeWrapper";
+import OrderIndex from "src/pages/Order/OrderIndex";
+import CustomerIndex from "src/pages/Customer/CustomerIndex";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to={"/login"} replace />,
+    element: <HomeWrapper />,
+    children: [
+      {
+        index: true,
+        element: <Navigate to={"./order"} />,
+      },
+      {
+        path: "order",
+        element: <OrderIndex />,
+        handle: {
+          indexName: "订单",
+          icon: "wallet",
+        },
+      },
+      {
+        path: "customer",
+        element: <CustomerIndex />,
+        handle: {
+          indexName: "客户",
+          icon: "add-user",
+        },
+      },
+    ],
   },
   {
     path: "/login",

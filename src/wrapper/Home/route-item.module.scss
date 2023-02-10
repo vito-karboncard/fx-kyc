@@ -1,0 +1,12 @@
+@mixin active {
+  @apply bg-gray-border text-color font-bold;
+}
+.route-item {
+  @apply rounded-xl cursor-pointer flex items-center px-5 py-4 text-color-secondary transition no-underline;
+  &:hover {
+    @include active;
+  }
+  &.current {
+    @include active;
+  }
+}
