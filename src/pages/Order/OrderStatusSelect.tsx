@@ -1,9 +1,9 @@
 import type { SelectProps } from "antd";
-import { Select } from "antd";
 import { orderStatusMap } from "src/pages/Order/useOrderColumns";
 import type { IconTypes } from "src/components/icon/icon-types";
 import Icon from "src/components/icon/index";
 import { OrderStatus } from "src/pages/Order/types";
+import FxSelect from "src/components/FxSelect";
 
 const IconMap: Record<OrderStatus, IconTypes> = {
   [OrderStatus.pending]: "pending-fill",
@@ -32,19 +32,7 @@ const statusOptions: SelectProps["options"] = [
 }));
 
 function OrderStatusSelect({ ...props }: Omit<SelectProps, "options">) {
-  return (
-    <Select
-      {...props}
-      options={statusOptions}
-      suffixIcon={
-        <Icon
-          name={"arrow-down"}
-          size={16}
-          className={"text-color-secondary"}
-        />
-      }
-    />
-  );
+  return <FxSelect {...props} options={statusOptions} />;
 }
 
 export default OrderStatusSelect;

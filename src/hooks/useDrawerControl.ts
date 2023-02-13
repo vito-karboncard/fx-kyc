@@ -4,7 +4,7 @@ export default () => {
   const [open, setOpen] = useState(false);
   return {
     open,
-    onCancel: () => {
+    onClose: () => {
       setOpen(false);
     },
     onOpen: () => {

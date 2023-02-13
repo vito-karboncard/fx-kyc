@@ -49,5 +49,19 @@
         padding: 0;
       }
     }
+
+    .ant-modal {
+      &-content {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      &-header {
+        margin-bottom: 0;
+      }
+    }
+
+    .ant-picker {
+      width: 100%;
+    }
   }
 }

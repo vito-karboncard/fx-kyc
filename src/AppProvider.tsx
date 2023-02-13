@@ -28,6 +28,9 @@ function AppProvider({ children }: { children: ReactNode }) {
             Select: {
               controlHeight: 44,
             },
+            DatePicker: {
+              controlHeight: 44,
+            },
           },
         }}
       >

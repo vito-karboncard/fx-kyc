@@ -3,6 +3,10 @@ type Types = {
     open: boolean;
     onClose?: () => void;
   };
+  modal: {
+    open: boolean;
+    onCancel?: () => void;
+  };
 };
 
 export default Types;
