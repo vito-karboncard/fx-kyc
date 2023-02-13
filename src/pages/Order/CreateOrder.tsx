@@ -1,3 +1,4 @@
+import type { ButtonProps } from "antd";
 import { Button, DatePicker, Form, Input } from "antd";
 import type Types from "src/types";
 import Icon from "src/components/icon/index";
@@ -103,17 +104,21 @@ const CreateOrder = () => {
   const modal = useModalControl();
   return (
     <>
-      <Button
-        icon={<Icon name={"cross"} className={"mr-1"} size={12} />}
-        style={{ paddingLeft: 16, paddingRight: 16 }}
-        onClick={() => {
-          modal.onOpen();
-        }}
-      >
-        新增
-      </Button>
+      <CreateButton onClick={modal.onOpen} />
       <CreateOrderModal {...modal} />
     </>
+  );
+};
+
+export const CreateButton = ({ onClick }: Pick<ButtonProps, "onClick">) => {
+  return (
+    <Button
+      icon={<Icon name={"cross"} className={"mr-1"} size={12} />}
+      style={{ paddingLeft: 16, paddingRight: 16 }}
+      onClick={onClick}
+    >
+      新增
+    </Button>
   );
 };
 

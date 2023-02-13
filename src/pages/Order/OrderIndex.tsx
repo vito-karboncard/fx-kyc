@@ -3,8 +3,8 @@ import { Form, Input, Table } from "antd";
 import Icon from "src/components/icon/index";
 import useOrderColumns from "src/pages/Order/useOrderColumns";
 import mockData, { detailData } from "src/pages/Order/mockData";
-import useModalControl from "src/hooks/useModalControl";
 import { OrderDetailDrawer } from "src/pages/Order/OrderDetail";
+import type { ReactNode } from "react";
 import { useState } from "react";
 import type OrderTypes from "src/pages/Order/types";
 import CreateOrder from "src/pages/Order/CreateOrder";
@@ -18,7 +18,7 @@ function OrderIndex() {
   const drawer = useDrawerControl();
   return (
     <HomePageContentWrapper>
-      <SearchBar />
+      <SearchBar rightNode={<CreateOrder />} />
       <Table
         rowKey={"uuid"}
         columns={columns}
@@ -26,7 +26,6 @@ function OrderIndex() {
         onRow={() => ({
           onClick: () => {
             const mockData = detailData();
-            console.log("-> mockData", mockData);
             setOrderDetail(mockData);
             drawer.onOpen();
           },
@@ -41,7 +40,7 @@ function OrderIndex() {
   );
 }
 
-const SearchBar = () => {
+export const SearchBar = ({ rightNode }: { rightNode?: ReactNode }) => {
   return (
     <div className="flex justify-between items-center mb-6">
       <Form>
@@ -53,7 +52,7 @@ const SearchBar = () => {
           />
         </Form.Item>
       </Form>
-      <CreateOrder />
+      {rightNode}
     </div>
   );
 };
