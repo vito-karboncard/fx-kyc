@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
 import AntdTheme from "./config/Ant Design Theme.json";
 import { ConfigProvider } from "antd";
+import Icon from "src/components/icon/index";
 
 function AppProvider({ children }: { children: ReactNode }) {
   return (
@@ -20,6 +21,12 @@ function AppProvider({ children }: { children: ReactNode }) {
             Input: {
               controlHeight: 44,
               colorTextPlaceholder: AntdTheme.token.colorTextSecondary,
+            },
+            Pagination: {
+              borderRadius: 8,
+            },
+            Select: {
+              controlHeight: 44,
             },
           },
         }}

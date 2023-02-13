@@ -1,3 +1,4 @@
+@import "./variables";
 .override-antd {
   :global {
     .ant-btn-default {
@@ -8,6 +9,44 @@
     h3 {
       &.ant-typography {
         margin-bottom: 0;
+      }
+    }
+
+    .ant-table-wrapper {
+      .ant-table {
+        .ant-table-thead {
+          .ant-table-cell {
+            @apply bg-white py-3 text-color-secondary;
+            border-top: 1px solid $gray-border;
+            border-radius: 0 !important;
+            &:before {
+              display: none;
+            }
+          }
+        }
+
+        .ant-table-tbody {
+          .ant-table-cell {
+            @apply py-5 cursor-pointer;
+            border-radius: 0 !important;
+          }
+        }
+      }
+      .ant-table-pagination.ant-pagination {
+        justify-content: center;
+        @apply my-6;
+      }
+    }
+
+    .ant-drawer {
+      &-body {
+        padding: 24px 32px;
+      }
+      &-header {
+        padding: 24px 32px;
+      }
+      &-close {
+        padding: 0;
       }
     }
   }

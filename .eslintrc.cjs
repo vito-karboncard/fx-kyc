@@ -27,6 +27,7 @@ module.exports = {
     "@typescript-eslint/consistent-type-imports": ["warn", {prefer: "type-imports"}],
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/no-floating-promises": "off",
-    "@typescript-eslint/no-invalid-void-type": "off"
+    "@typescript-eslint/no-invalid-void-type": "off",
+    "@typescript-eslint/consistent-type-definitions": "off"
   }
 };
