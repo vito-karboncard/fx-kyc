@@ -1,0 +1,9 @@
+.file-list {
+  .file-item {
+    @apply flex justify-between items-center px-4 py-5 border-y border-x-0 border-gray-border border-solid hover:bg-primary hover:bg-opacity-5 cursor-pointer focus-within:bg-primary focus-within:bg-opacity-5;
+    margin-top: -1px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,6 +1,10 @@
 import type { FormRule } from "antd";
 import utils from ".";
 
+export const requiredRule: FormRule = {
+  required: true,
+  message: "该字段不能为空",
+};
 export const otpRule: FormRule = {
   async validator(_, value, ...rest) {
     if (utils.REManual.otp.test(value)) {

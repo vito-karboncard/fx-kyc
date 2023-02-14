@@ -1,7 +1,8 @@
 @import "./variables";
 .override-antd {
   :global {
-    .ant-btn-default {
+    .ant-btn-default,
+    .ant-btn-dashed {
       box-shadow: none;
     }
     h1,

@@ -100,11 +100,21 @@ const BankAccountFormItems = ({ hidden }: { hidden?: boolean }) => {
   );
 };
 
-const CreateOrder = () => {
+const CreateOrder = ({ primaryButton }: { primaryButton?: boolean }) => {
   const modal = useModalControl();
   return (
     <>
-      <CreateButton onClick={modal.onOpen} />
+      {primaryButton ? (
+        <Button
+          type={"primary"}
+          onClick={modal.onOpen}
+          icon={<Icon name={"cross"} className={"mr-2"} />}
+        >
+          新建订单
+        </Button>
+      ) : (
+        <CreateButton onClick={modal.onOpen} />
+      )}
       <CreateOrderModal {...modal} />
     </>
   );
