@@ -7,6 +7,7 @@ import HomeWrapper from "src/wrapper/Home/HomeWrapper";
 import OrderIndex from "src/pages/Order/OrderIndex";
 import CustomerIndex from "src/pages/Customer/CustomerIndex";
 import TeamIndex from "src/pages/Team/TeamIndex";
+import ApplicationIndex from "src/pages/Application/ApplicationIndex";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "team",
         element: <TeamIndex />,
+      },
+      {
+        path: "application",
+        element: <ApplicationIndex />,
       },
     ],
   },

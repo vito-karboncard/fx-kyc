@@ -29,8 +29,13 @@ export const NavRoutes: RouteItemProps[] = [
   },
   {
     path: "/team",
-    icon: "share",
+    icon: "team",
     name: "团队",
+  },
+  {
+    path: "/application",
+    icon: "exchange",
+    name: "请求",
   },
 ];
 const SideBar = () => {

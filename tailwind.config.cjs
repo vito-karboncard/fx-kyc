@@ -6,8 +6,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: false,
+  important: '.tailwind-high-level',
   theme: {
     colors: {
+      inherit: 'inherit',
       transparent: 'transparent',
       primary: theme.token.colorPrimary,
       success: theme.token.colorSuccess,

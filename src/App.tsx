@@ -9,6 +9,7 @@ import { useEffect } from "react";
 
 function App() {
   useAntOverrideStyle();
+  useTailwindPriorityStyle();
   return (
     <div className={classNames("App", Style.overrideAntd)}>
       <RouterProvider router={route} />
@@ -20,6 +21,14 @@ const useAntOverrideStyle = () => {
   useEffect(() => {
     if (!document.body.classList.contains(Style.overrideAntd)) {
       document.body.classList.add(Style.overrideAntd);
+    }
+  }, []);
+};
+
+const useTailwindPriorityStyle = () => {
+  useEffect(() => {
+    if (!document.body.classList.contains("tailwind-high-level")) {
+      document.body.classList.add("tailwind-high-level");
     }
   }, []);
 };
