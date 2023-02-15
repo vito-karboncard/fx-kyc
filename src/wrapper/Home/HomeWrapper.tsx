@@ -27,6 +27,11 @@ export const NavRoutes: RouteItemProps[] = [
     icon: "add-user",
     name: "客户",
   },
+  {
+    path: "/team",
+    icon: "share",
+    name: "团队",
+  },
 ];
 const SideBar = () => {
   const { pathname } = useLocation();

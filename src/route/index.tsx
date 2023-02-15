@@ -6,6 +6,7 @@ import Register from "src/pages/Login/Register";
 import HomeWrapper from "src/wrapper/Home/HomeWrapper";
 import OrderIndex from "src/pages/Order/OrderIndex";
 import CustomerIndex from "src/pages/Customer/CustomerIndex";
+import TeamIndex from "src/pages/Team/TeamIndex";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
           indexName: "客户",
           icon: "add-user",
         },
+      },
+      {
+        path: "team",
+        element: <TeamIndex />,
       },
     ],
   },
