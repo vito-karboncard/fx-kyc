@@ -8,6 +8,7 @@ import OrderIndex from "src/pages/Order/OrderIndex";
 import CustomerIndex from "src/pages/Customer/CustomerIndex";
 import TeamIndex from "src/pages/Team/TeamIndex";
 import ApplicationIndex from "src/pages/Application/ApplicationIndex";
+import TemplateFile from "src/pages/Template/TemplateFile";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,16 @@ const router = createBrowserRouter([
       },
       {
         path: "application",
-        element: <ApplicationIndex />,
+        children: [
+          {
+            index: true,
+            element: <ApplicationIndex />,
+          },
+          {
+            path: "template",
+            element: <TemplateFile />,
+          },
+        ],
       },
     ],
   },
