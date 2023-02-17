@@ -1,5 +1,7 @@
 import { Col, Row, Typography } from "antd";
-import TemplateCard, { AddTemplateCard } from "src/pages/Template/TemplateCard";
+import TemplateCard, {
+  AddTemplateCard,
+} from "src/pages/Template/components/TemplateCard";
 import { useNavigate } from "react-router-dom";
 
 function TemplateGallery() {

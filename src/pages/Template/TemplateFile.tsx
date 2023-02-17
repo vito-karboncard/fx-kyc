@@ -3,17 +3,28 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import templateUtils from "src/pages/Template/utils";
 import { Button, Space } from "antd";
-type TemplateType = keyof typeof templateUtils.templateTypeMap;
+import SideNav from "src/pages/Template/components/SideNav";
+import DataProvider from "src/pages/Template/DataProvider";
+
+type TemplateEditType = keyof typeof templateUtils.templateEditTypeMap;
+
 function TemplateFile() {
   const { title } = useTemplateType();
   return (
-    <HomePageContentWrapper
-      bottomBorder
-      pageTitle={title}
-      customActions={<Operations />}
-    >
-      new
-    </HomePageContentWrapper>
+    <DataProvider>
+      <HomePageContentWrapper
+        bottomBorder
+        pageTitle={title}
+        customActions={<Operations />}
+      >
+        <div className="relative flex">
+          <div className={"w-[312px] mr-6"}>
+            <SideNav />
+          </div>
+          <div className={"flex-grow"}>content123</div>
+        </div>
+      </HomePageContentWrapper>
+    </DataProvider>
   );
 }
 
@@ -21,14 +32,14 @@ export default TemplateFile;
 
 const useTemplateType = () => {
   const { state } = useLocation();
-  const [templateType, setTemplateType] = useState<TemplateType>(
+  const [templateType, setTemplateType] = useState<TemplateEditType>(
     state?.type || "new"
   );
 
   return {
     type: templateType,
     setTemplateType,
-    title: templateUtils.templateTypeMap[templateType],
+    title: templateUtils.templateEditTypeMap[templateType],
   };
 };
 

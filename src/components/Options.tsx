@@ -7,10 +7,9 @@ function Options({
   options,
   onSelect,
   onOpenChange,
-}: Pick<
-  ComponentProps<typeof FxOptionsPopUp>,
-  "options" | "onSelect" | "onOpenChange"
->) {
+  isHovering,
+  ...props
+}: ComponentProps<typeof FxOptionsPopUp> & { isHovering?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,9 +20,11 @@ function Options({
         onOpenChange?.(value);
       }}
       onSelect={onSelect}
+      trigger={"click"}
+      {...props}
     >
       <div className={"cursor-pointer inline-block"}>
-        <DotSvg isHovering={open} />
+        <DotSvg isHovering={isHovering ?? open} />
       </div>
     </FxOptionsPopUp>
   );

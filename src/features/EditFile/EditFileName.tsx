@@ -27,12 +27,12 @@ function EditFileName({
   }, [form, fileName]);
   return (
     <Form component={false} form={form}>
-      <Space size={8}>
-        {icon}
+      <div className={"flex items-center flex-grow pr-2"}>
+        {icon && <div className="mr-2">{icon}</div>}
         {!editable ? (
           name
         ) : (
-          <div className="flex items-center">
+          <div className="flex items-center flex-grow">
             <Form.Item
               name={"name"}
               noStyle
@@ -61,7 +61,7 @@ function EditFileName({
             {fileType && <span>.{fileType}</span>}
           </div>
         )}
-      </Space>
+      </div>
     </Form>
   );
 }
