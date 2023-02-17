@@ -18,6 +18,8 @@ type CollectionItem = {
   type: CollectionItemType;
   value: string | null;
   fileList: File[] | null;
+  collectionUuid: string;
+  createdAt: string;
 };
 
 type CollectionTypes = {

@@ -5,6 +5,7 @@ import templateUtils from "src/pages/Template/utils";
 import { Button, Space } from "antd";
 import SideNav from "src/pages/Template/components/SideNav";
 import DataProvider from "src/pages/Template/DataProvider";
+import TemplateArticle from "src/pages/Template/components/TemplateArticle";
 
 type TemplateEditType = keyof typeof templateUtils.templateEditTypeMap;
 
@@ -21,7 +22,9 @@ function TemplateFile() {
           <div className={"w-[312px] mr-6"}>
             <SideNav />
           </div>
-          <div className={"flex-grow"}>content123</div>
+          <div className={"flex-grow"}>
+            <TemplateArticle />
+          </div>
         </div>
       </HomePageContentWrapper>
     </DataProvider>
