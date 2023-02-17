@@ -14,14 +14,10 @@ function SideNav() {
   const { collectionTree } = useTemplateDataCtx();
   return (
     <ul
-      className={"rounded-xl bg-white p-5"}
+      className={"rounded-xl bg-white p-5 grid grid-cols-1 gap-2"}
       style={{ boxShadow: token.boxShadow }}
     >
-      <EditableNavItem
-        collection={collectionTree}
-        collectionLevel={0}
-        rowCls={"mb-2"}
-      />
+      <EditableNavItem collection={collectionTree} collectionLevel={0} />
       {collectionTree?.children &&
         collectionTree.children.map((collection) => {
           return (
