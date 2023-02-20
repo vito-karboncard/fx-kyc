@@ -16,6 +16,7 @@ function CollectionItemRemark({
       <div className="inline-grid grid-flow-col gap-2 items-center hidden">
         <Icon name={"copy"} className={iconCls} />
         <Icon name={"close"} className={iconCls} />
+        <span>1</span>
       </div>
     </div>
   );
